@@ -1,0 +1,25 @@
+# fly.toml app configuration file generated for hello-world-tonic on 2024-04-20T14:39:35+01:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'hello-world-tonic'
+primary_region = 'lhr'
+
+[build]
+
+[[services]]
+internal_port = 50051
+protocol = "tcp"
+
+[[services.ports]]
+handlers = ["tls"]
+port = "443"
+
+[services.ports.tls_options]
+alpn = ["h2"]
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1
