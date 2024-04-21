@@ -66,13 +66,7 @@ The project includes a Dockerfile for containerizing the GRPC server service. To
 
 1. Install the Fly.io CLI by following the instructions in the [Fly.io documentation](https://fly.io/docs/getting-started/installing-flyctl/).
 
-2. Build the Docker image:
-
-   ```
-   docker build -t hello-world-grpc-rust .
-   ```
-
-3. Deploy the service to Fly.io:
+2. Deploy the service to Fly.io:
 
    ```
    flyctl deploy
